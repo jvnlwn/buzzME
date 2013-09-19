@@ -4,26 +4,22 @@
 
 	describe('buzzME', function() {
 
+		this.timeout(15000);
+
 		it('should save a message to Parse', function(done) {
 			var result;
 
 			var message = new MessageClass();
-			$('.user-name-input').val('Bob');
+			$('#username').val('Bob');
 			var messageContent = 'My message number ' + Math.floor(Math.random()*100000);
 
-			$('.message-input').val(messageContent);
+			$('#usermsg').val(messageContent);
 
-			$('.send').click();
+			$('#submitmsg').click();
 
 			setTimeout(function() {
-				message.save({
-					success: function(message) {
-						result = message;
-						expect(result.get('message')).to.equal(messageContent);
-						done();
-					}
-				})
-			},3000)
-		})
+				
+			},3000);
+		});
 	});
 })();
