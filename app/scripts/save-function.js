@@ -1,6 +1,6 @@
 function saveMessage() {
-	var message = new MessageClass()
-	message.set('name', $('#username').val());
+	var message = new MessageClass();
+	message.set('name', userName);
 	message.set('message', $('#usermsg').val());
 
 	// call display function here, or simply append li/span
