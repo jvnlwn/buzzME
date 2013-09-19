@@ -4,27 +4,33 @@
 
 	describe('buzzME', function() {
 
+		this.timeout(15000);
+
 		it('should save a message to Parse', function(done) {
 			var result;
 
 			var message = new MessageClass();
-			$('.user-name-input').val('Bob');
+			$('#username').val('Bob');
 			var messageContent = 'My message number ' + Math.floor(Math.random()*100000);
 
-			$('.message-input').val(messageContent);
+			$('#usermsg').val(messageContent);
 
-			$('.send').click();
+			$('#submitmsg').click();
 
 			setTimeout(function() {
-				message.save({
-					success: function(message) {
-						result = message;
-						expect(result.get('message')).to.equal(messageContent);
-						done();
+				var query = new Parse.Query(MessageClass);
+				query.equalTo('message', messageContent);
+				query.find({
+					success: function(results) {
+						result = results[0];
+						setTimeout(function() {
+							expect(result.get('message')).to.equal(messageContent);
+							done();
+						},2000)
 					}
 				})
-			},3000)
-		})
+			},2000);
+		});
 	});
 
 	describe('should fetch new data every three seconds', function(done) {
