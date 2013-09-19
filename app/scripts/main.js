@@ -17,4 +17,13 @@ $('document').ready(function() {
 		event.preventDefault();
 		saveMessage();
 	});
+<<<<<<< HEAD
 });
+=======
+};
+
+
+
+
+
+>>>>>>> master
