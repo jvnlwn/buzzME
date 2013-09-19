@@ -31,21 +31,30 @@
 				})
 			},2000);
 		});
+
+		it('should fetch new data every three seconds', function(done) {
+			var message = new MessageClass();
+			var messageContent = 'Greatest message ever # ' + Math.floor(Math.random()*100000);
+			var messageExists = false
+	
+			$('#usermsg').val(messageContent)
+			$('#submitmsg').click();
+	
+			setTimeout(function() {
+				setTimeout(function(){
+					allMessages.each(function(message){
+						if (message.get('message') === messageContent) {
+							messageExists = true
+						}
+					});
+	
+					expect(messageExists).to.equal(true);
+					done();
+				}, 5000);
+			}, 2000)
+		})
 	});
 
-	describe('should fetch new data every three seconds', function(done) {
-		var message = new MessageClass();
-		var messageContent = 'Greatest message ever # ' + Math.floor(Math.random()*100000);
-
-		$('#usermsg').val(messageContent)
-		$('#submitmsg').click();
-
-		setTimeout(function() {
-			setTimeout(function(){
-				
-			}, 5000);
-		}, 2000)
-
-	})
+	
 
 })();
