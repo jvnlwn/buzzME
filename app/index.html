@@ -21,15 +21,26 @@
         <![endif]-->
 
 
-        <div class="hero-unit">
-          <h1>'Allo, 'Allo!</h1>
-          <p>You now have</p>
-          <ul>
-            <li>HTML5 Boilerplate</li>
+        <div id="wrapper">  
+            <div id="menu">  
+                <p class="welcome">Welcome, <b></b></p>  
+                
+                <p class="logout"><a id="exit" href="#">Exit Chat</a></p>  
+                <div style="clear:both"></div>  
+            </div>  
+      
+            <div id="chatbox"></div>  
+      
+            <form name="message" action="">  
+                
+                <input name="usermsg" type="text" id="username" size="23" placeholder="buzzer name" />
 
 
-          </ul>
-        </div>
+                <input name="usermsg" type="text" id="usermsg" size="63" placeholder="buzzTHIS!" />  
+                
+                <input name="submitmsg" type="submit"  id="submitmsg" value="Send" />  
+            </form>  
+        </div> <!-- close Wrapper -->
 
 
         <!-- build:js scripts/vendor.js -->
