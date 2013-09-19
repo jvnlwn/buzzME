@@ -1,5 +1,5 @@
 function saveMessage() {
-	message = new MessageClass()
+	var message = new MessageClass()
 	message.set('name', $('#username').val());
 	message.set('message', $('#usermsg').val());
 

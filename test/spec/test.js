@@ -18,8 +18,18 @@
 			$('#submitmsg').click();
 
 			setTimeout(function() {
-				
-			},3000);
+				var query = new Parse.Query(MessageClass);
+				query.equalTo('message', messageContent);
+				query.find({
+					success: function(results) {
+						result = results[0];
+						setTimeout(function() {
+							expect(result.get('message')).to.equal(messageContent);
+							done();
+						},2000)
+					}
+				})
+			},2000);
 		});
 	});
 })();
