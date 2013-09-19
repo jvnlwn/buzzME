@@ -1,7 +1,7 @@
 setInterval(function()  {
 	allMessages.fetch({
  		success: function(allMessages) {
-    // The object was refreshed successfully.
+    		display(allMessages);
   		},
   		error: function(allMessages, error) {
     		console.log('you blew it')

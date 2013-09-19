@@ -63,11 +63,6 @@ a:hover { text-decoration:underline; }
    
 .msgln { margin:0 0 2px 0; }  
 
-
-div.submitmsg {
-    color: #FFF;
-    height: 20px;
-    width: 100px;
-    margin: 9px 0 0 80px;
-    background: black;
+.users-message {
+    background: #acacac;
 }

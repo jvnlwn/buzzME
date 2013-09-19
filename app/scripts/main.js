@@ -7,6 +7,8 @@ var MessageCollectionClass = Parse.Collection.extend({
 // collection of all the messages
 var allMessages = new MessageCollectionClass();
 
+var userName;
+
 // thinking we need a global variable for the user's name.
 // or, we could just take the input value from the modal. I'll base the save function off that idea for now.
 // var userName;
@@ -17,5 +19,12 @@ $('document').ready(function() {
 		event.preventDefault();
 		saveMessage();
 	});
+
+	$('#username').keydown(function(event) {
+		if(event.which === 13) {
+			event.preventDefault();
+			userName = $('#username').val();
+		}
+	})
 });
 
