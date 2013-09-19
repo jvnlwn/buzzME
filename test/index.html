@@ -9,6 +9,34 @@
     <div id="mocha"></div>
     <script src="lib/mocha/mocha.js"></script>
     <script>mocha.setup('bdd')</script>
+
+    <!--[if lt IE 10]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+
+    <div id="wrapper">  
+        <div id="menu">  
+            <p class="welcome">Welcome, <b></b></p>  
+            
+            <p class="logout"><a id="exit" href="#">Exit Chat</a></p>  
+            <div style="clear:both"></div>  
+        </div>  
+  
+        <div id="chatbox"></div>  
+  
+        <form name="message" action="">  
+            
+            <input name="usermsg" type="text" id="username" size="23" placeholder="buzzer name" />
+
+
+            <input name="usermsg" type="text" id="usermsg" size="63" placeholder="buzzTHIS!" />  
+            
+            <input class="submitmsg" name="submitmsg" type="submit"  id="submitmsg" value="Send" />  
+        </form>  
+    </div> <!-- close Wrapper -->
+
+
     <!-- assertion framework -->
     <script src="lib/chai.js"></script>
     <script>var expect = chai.expect</script>
@@ -16,7 +44,9 @@
     <!-- include source files here... -->
     <script src="http://www.parsecdn.com/js/parse-1.2.12.min.js"></script>
     <script src="../app/bower_components/jquery/jquery.js"></script>
+    <script src="../app/scripts/parse-initialize.js"></script>
     <script src="../app/scripts/main.js"></script>
+    <script src="../app/scripts/save-function.js"></script>
 
     <!-- include spec files here... -->
     <script src="spec/test.js"></script>
