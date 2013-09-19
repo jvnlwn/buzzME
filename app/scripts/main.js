@@ -1,5 +1,3 @@
-Parse.initialize("VZqbbMNR30PJJai3TJoF9YpzeNfvOOf3NZ4G9bLe", "pVp5vCCYofq0RNoQBVLt8VscOYlSqmQJCNRMjUce");
-
 var MessageClass = Parse.Object.extend('Message');
 
 var MessageCollectionClass = Parse.Collection.extend({
@@ -30,6 +28,3 @@ function saveMessage() {
 		}
 	});
 };
-
-
-
