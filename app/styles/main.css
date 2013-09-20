@@ -64,14 +64,13 @@ a:hover {
    
 #chatbox {  
     text-align:left;  
-    margin:0 auto;  
-    margin-bottom:25px;  
-    padding:10px;  
+    /*margin:0 auto; */ 
+    /*margin-bottom:25px; */ 
+    /*padding:10px; */ 
     background:#fff;  
-    height:270px;  
-    width:80%;  
-    border:1px solid #ACD8F0;  
-    overflow:auto; }  
+    /*height:270px;  
+    width:80%;  */
+    /*border:1px solid #ACD8F0;*/ }  
    
 #username {  
     width:25%;  
@@ -106,4 +105,16 @@ a:hover {
     background-color: #acacac;
     height:50px;
     margin-top:20px;
+}
+
+.chatbox-enclosure {
+    text-align:left;  
+    margin:0 auto;  
+    margin-bottom:25px;  
+    padding:10px;  
+    background:#fff;  
+    height:270px;  
+    width:80%;  
+    border:1px solid #ACD8F0; 
+    overflow-y: scroll;
 }
