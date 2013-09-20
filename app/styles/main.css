@@ -1,11 +1,13 @@
 @import url(http://fonts.googleapis.com/css?family=Rationale);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500);
 
 body {  
-    font:12px arial;  
+    font:16px 'Roboto';  
     color: #222;  
     text-align:center;  
     padding: 0px;
     margin: 0 auto;
+    background-color:#CCCC99;
 }  
 
 .header {
@@ -13,13 +15,20 @@ body {
     top: 0;
     width: 100%;
     height: 50px;
-    background-color:#acacac;
+    background-color:#6A6A5A;
     margin-bottom:20px;
 }
 
 .header-wrap {
     width:85%;
     margin: 0 auto;
+}
+
+.header-wrap img {
+  height: 35px;
+    width: 35px;
+    padding-bottom: 11px;
+
 }
 
 h1 {
@@ -29,6 +38,7 @@ h1 {
     text-align:left;
     line-height:2.9;
     font-size:28px;
+    color:white;
 }
    
 form, p, span {  
@@ -36,12 +46,15 @@ form, p, span {
     padding:0; }  
    
 input { 
-    font:12px arial;
-    padding-left:10px;
+   font: 16px helvetica;
+    padding-left: 10px;
+    height: 35px;
+    border-radius: 2px;
+    box-shadow: inset 0 2px 18px -6px black;
  }  
    
 a {  
-    color:#0000FF;  
+    color:white;  
     text-decoration:none;
 }  
    
@@ -50,13 +63,14 @@ a:hover {
 }  
    
 .wrapper, #loginform {  
-    margin:0 auto;
-    margin-top:60px;  
-    padding-bottom:25px;  
-    background:#EBF4FB;  
-    width:85%;
-    min-height: 100%;  
-    border:1px solid #ACD8F0; }  
+    margin: 0 auto;
+    margin-top: 60px;
+    padding-bottom: 25px;
+    background: #006699;
+    width: 85%;
+    min-height: 100%;
+    border: 1px solid #006677;
+    border-radius: 12px; }  
    
 #loginform { padding-top:18px; }  
    
@@ -66,8 +80,8 @@ a:hover {
     text-align:left;  
     margin:0 auto;  
     margin-bottom:25px;  
-    padding:10px;  
-    background:#fff;  
+    padding:10px;
+    background:white;    
     height:270px;  
     width:80%;  
     border:1px solid #ACD8F0;  
@@ -81,15 +95,33 @@ a:hover {
     width:60%;  
     border:1px solid #ACD8F0; }  
    
-#submitmsg { width: 10%; 
+#submitmsg {
+    width: 10%; 
     text-align: center;
+
 }  
+
+.name {
+    border-right:1px solid #acacac;
+    padding-right:10px;
+    padding-left:5px;
+    background-color:#ebebeb;
+    width:15%;
+    display:inline-block;
+    overflow: hidden;
+}
+.message {
+    margin-left:10px;
+}
    
 .error { color: #ff0000; }  
    
 #menu { padding:12.5px 25px 12.5px 25px; }  
    
-.welcome { float:left; }  
+.welcome { 
+    float:left;
+    color:#FCD40F;
+ }  
    
 .logout { float:right; }  
    
@@ -103,7 +135,13 @@ a:hover {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: #acacac;
+    background-color:#6A6A5A;
     height:50px;
     margin-top:20px;
+}
+
+.footer p {
+    text-align: right;
+    padding-right:20px;
+    line-height: 3
 }
