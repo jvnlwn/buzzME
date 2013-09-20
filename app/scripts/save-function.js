@@ -8,7 +8,7 @@ function saveMessage() {
 
 	message.save({
 		success: function(message) {
-			console.log(message, ' it is saved')
+			console.log(message, ' it is saved');
 			// probably nothing here
 		},
 		error: function(message, error) {

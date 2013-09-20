@@ -9,6 +9,10 @@ var allMessages = new MessageCollectionClass();
 
 var userName;
 
+function scrolltoBottom() {
+	$("#chatbox").scrollTop($("#chatbox")[0].scrollHeight);
+};
+
 // thinking we need a global variable for the user's name.
 // or, we could just take the input value from the modal. I'll base the save function off that idea for now.
 // var userName;
