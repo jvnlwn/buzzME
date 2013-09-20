@@ -66,11 +66,19 @@ a:hover {
     margin: 0 auto;
     margin-top: 60px;
     padding-bottom: 25px;
-    background: #006699;
+    background: rgb(0,102,153); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(0,102,153,1) 15%, rgba(65,111,140,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(15%,rgba(0,102,153,1)), color-stop(100%,rgba(65,111,140,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(0,102,153,1) 15%,rgba(65,111,140,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(0,102,153,1) 15%,rgba(65,111,140,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(0,102,153,1) 15%,rgba(65,111,140,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(0,102,153,1) 15%,rgba(65,111,140,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006699', endColorstr='#416f8c',GradientType=0 ); /* IE6-9 */
     width: 85%;
     min-height: 100%;
     border: 1px solid #006677;
-    border-radius: 12px; }  
+    border-radius: 12px;
+    box-shadow: 0 10px 32px -6px rgb(64, 66, 51); }  
    
 #loginform { padding-top:18px; }  
    
@@ -88,7 +96,7 @@ a:hover {
     overflow:auto; }  
    
 #username {  
-    width:25%;  
+    width:23%;  
     border:1px solid #ACD8F0; }
 
 #usermsg {  
@@ -96,8 +104,11 @@ a:hover {
     border:1px solid #ACD8F0; }  
    
 #submitmsg {
-    width: 10%; 
+    width: 9%;
     text-align: center;
+    border-radius: 4px;
+    background-color: rgb(214, 203, 77);
+
 
 }  
 
@@ -138,10 +149,11 @@ a:hover {
     background-color:#6A6A5A;
     height:50px;
     margin-top:20px;
+    box-shadow: 0px 0px 37px 0px rgb(95, 104, 48);
 }
 
 .footer p {
     text-align: right;
     padding-right:20px;
-    line-height: 3
+    line-height: 3;
 }
