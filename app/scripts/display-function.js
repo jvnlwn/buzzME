@@ -10,4 +10,4 @@ function ifUser(message) {
 	if (message.get('name') === userName) {
 		return 'users-message';
 	} else {return ''};
-}
+};
