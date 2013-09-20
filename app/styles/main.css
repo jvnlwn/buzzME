@@ -108,21 +108,28 @@ a:hover {
     text-align: center;
     border-radius: 4px;
     background-color: rgb(214, 203, 77);
-
-
 }  
+
+.chat-message {
+    border-bottom: 1px solid #ababab;
+}
 
 .name {
     border-right:1px solid #acacac;
     padding-right:10px;
     padding-left:5px;
-    background-color:#ebebeb;
+    background-color:#ACD8F0;
     width:15%;
     display:inline-block;
     overflow: hidden;
+    height:100%;
+    vertical-align: top
+
 }
 .message {
     margin-left:10px;
+    max-width:80%;
+    display:inline-block;
 }
    
 .error { color: #ff0000; }  
