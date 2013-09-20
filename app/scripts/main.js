@@ -26,7 +26,6 @@ $('document').ready(function() {
 		if(event.which === 13) {
 			event.preventDefault();
 			userName = $('#username').val();
-			getLatestMessages()
 		}
 	});
 

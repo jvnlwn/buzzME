@@ -1,6 +1,9 @@
 setInterval(function()  {
-	allMessages.fetch({
- 		success: function(allMessages) {
+	var query = new Parse.Query(MessageClass);
+	query.greaterThan('createdAt', allMessages.at(allMessages.length - 1).createdAt)
+	query.find({
+ 		success: function(messages) {
+ 			allMessages.add(messages);
     		display(allMessages);
 			scrolltoBottomIf(false);
   		},
