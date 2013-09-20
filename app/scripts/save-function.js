@@ -4,7 +4,7 @@ function saveMessage() {
 	message.set('message', $('#usermsg').val());
 
 	// call display function here, or simply append li/span
-	$('#chatbox').append('<div><span class="name">'+message.get('name')+'</span><span class="message">: '+message.get('message')+'</span></div>')
+	$('#chatbox').append('<div class="' + ifUser(message) + '"><span class="name">'+message.get('name')+'</span><span class="message">: '+message.get('message')+'</span></div>')
 
 	message.save({
 		success: function(message) {
