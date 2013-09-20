@@ -3,6 +3,7 @@ body {
     color: #222;  
     text-align:center;  
     padding:35px;
+    min-height: 100%;
 
 }  
    
@@ -41,12 +42,8 @@ a:hover { text-decoration:underline; }
     border:1px solid #ACD8F0;  
     overflow:auto; }  
    
-#username {  
-    width:25%;  
-    border:1px solid #ACD8F0; }
-
 #usermsg {  
-    width:60%;  
+    width:70%;  
     border:1px solid #ACD8F0; }  
    
 #submitmsg { width: 10%; 
