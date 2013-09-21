@@ -9,10 +9,6 @@ var allMessages = new MessageCollectionClass();
 
 var userName;
 
-// thinking we need a global variable for the user's name.
-// or, we could just take the input value from the modal. I'll base the save function off that idea for now.
-// var userName;
-
 $('document').ready(function() {
 
 	getLatestMessages()
@@ -26,6 +22,14 @@ $('document').ready(function() {
 		if(event.which === 13) {
 			event.preventDefault();
 			userName = $('#username').val();
+		}
+	});
+
+	$('#usermsg').keydown(function(event) {
+		if(event.which === 13) {
+			event.preventDefault();
+			saveMessage();
+			$(this).val('');
 		}
 	});
 
