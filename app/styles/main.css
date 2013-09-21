@@ -44,7 +44,8 @@ h1 {
    
 form, p, span {  
     margin:0;  
-    padding:0; }  
+    padding:0; 
+}  
    
 input { 
    font: 16px helvetica;
@@ -52,7 +53,7 @@ input {
     height: 35px;
     border-radius: 2px;
     box-shadow: inset 0 2px 18px -6px black;
- }  
+}  
    
 a {  
     color:white;  
@@ -80,7 +81,8 @@ a:hover {
     height:515px;
     border: 1px solid #006677;
     border-radius: 12px;
-    box-shadow: 0 10px 32px -6px rgb(64, 66, 51); }  
+    box-shadow: 0 10px 32px -6px rgb(64, 66, 51);
+}  
    
 #loginform { padding-top:18px; }  
    
@@ -93,11 +95,13 @@ a:hover {
    
 #username {  
     width:23%;  
-    border:1px solid #ACD8F0; }
+    border:1px solid #ACD8F0;
+}
 
 #usermsg {  
     width:60%;  
-    border:1px solid #ACD8F0; }  
+    border:1px solid #ACD8F0; 
+}  
    
 #submitmsg {
         
@@ -167,6 +171,7 @@ a:hover {
     vertical-align: top
 
 }
+
 .message {
     margin-left:10px;
     max-width:80%;
