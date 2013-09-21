@@ -100,11 +100,56 @@ a:hover {
     border:1px solid #ACD8F0; }  
    
 #submitmsg {
-    width: 9%;
-    text-align: center;
-    border-radius: 4px;
-    background-color: rgb(214, 203, 77);
-}  
+        
+    -moz-box-shadow:inset 0px 1px 0px 0px #ffe0b5;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #ffe0b5;
+    box-shadow:inset 0px 1px 0px 0px #ffe0b5;
+    
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #fbb450), color-stop(1, #f89306));
+    background:-moz-linear-gradient(top, #fbb450 5%, #f89306 100%);
+    background:-webkit-linear-gradient(top, #fbb450 5%, #f89306 100%);
+    background:-o-linear-gradient(top, #fbb450 5%, #f89306 100%);
+    background:-ms-linear-gradient(top, #fbb450 5%, #f89306 100%);
+    background:linear-gradient(to bottom, #fbb450 5%, #f89306 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fbb450', endColorstr='#f89306',GradientType=0);
+    
+    background-color:#fbb450;
+    
+    -moz-border-radius:7px;
+    -webkit-border-radius:7px;
+    border-radius:7px;
+    
+    border:1px solid #c97e1c;
+    
+    display:inline-block;
+    color:#ffffff;
+    font-family:Trebuchet MS;
+    font-size:17px;
+    font-weight:bold;
+    padding:6px 11px;
+    text-decoration:none;
+    
+    text-shadow:0px 1px 0px #8f7f24;
+        
+}
+
+#submitmsg:hover {
+    
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f89306), color-stop(1, #fbb450));
+    background:-moz-linear-gradient(top, #f89306 5%, #fbb450 100%);
+    background:-webkit-linear-gradient(top, #f89306 5%, #fbb450 100%);
+    background:-o-linear-gradient(top, #f89306 5%, #fbb450 100%);
+    background:-ms-linear-gradient(top, #f89306 5%, #fbb450 100%);
+    background:linear-gradient(to bottom, #f89306 5%, #fbb450 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f89306', endColorstr='#fbb450',GradientType=0);
+    
+    background-color:#f89306;
+}
+
+#submitmsg:active {
+    position:relative;
+    top:1px;
+}
 
 .chat-message {
     border-bottom: 1px solid #ababab;
@@ -142,7 +187,7 @@ a:hover {
 .msgln { margin:0 0 2px 0; }  
 
 .users-message {
-    background: #acacac;
+    background:rgba(255, 249, 203, 0.29)
 }
 
 .footer {
@@ -165,10 +210,10 @@ a:hover {
     text-align:left;  
     margin:0 auto;  
     margin-bottom:25px;  
-    padding:10px;  
+    padding-bottom:10px;  
     background:#fff;  
     height:393px;  
-    width:80%;  
+    width:90%;  
     border:1px solid #ACD8F0; 
     overflow-y: scroll;
 }
