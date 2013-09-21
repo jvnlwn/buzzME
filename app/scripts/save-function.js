@@ -7,7 +7,7 @@ function saveMessage() {
 	$('#chatbox').append('<div class="' + ifUser(message) + '"><span class="name">'+message.get('name')+'</span><span class="message">: '+message.get('message')+'</span></div>')
 	scrollToBottom();
 
-	message.save({
+	message.save(null, {
 		success: function(message) {
 			console.log(message, ' it is saved');
 			// probably nothing here
@@ -17,3 +17,7 @@ function saveMessage() {
 		}
 	});
 };
+
+function clearInput(input) {
+	input.val('');
+}
