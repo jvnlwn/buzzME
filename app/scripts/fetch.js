@@ -5,7 +5,7 @@ setInterval(function()  {
  		success: function(messages) {
  			allMessages.add(messages);
     		display(allMessages);
-			scrolltoBottomIf(false);
+			changeTitleNum( newMessageSound( messages, scrolltoBottomIf() ) );
   		},
   		error: function(allMessages, error) {
     		console.log('you blew it')
@@ -15,12 +15,14 @@ setInterval(function()  {
 },
 3000);
 
-function scrolltoBottomIf(forceScroll) {
+function scrolltoBottomIf() {
 	var diff = ( $('#chatbox').outerHeight(true) - $('.chatbox-enclosure').height())
 
 	if ( diff - ($('.chatbox-enclosure').scrollTop()) <= 50 ) {
 		scrollToBottom();
-	}
+		return false;
+	} else { 
+		return true};
 };
 
 function scrollToBottom() {
@@ -32,4 +34,49 @@ function scrollToPosition(length) {
 		$(".chatbox-enclosure").scrollTop(300);
 	};
 };
+
+// sound effect for when user does not see the messages from other users
+function newMessageSound(messages, unseen) {
+	var numOfNewMessages = 0;
+	if (unseen) {
+		var snd = new Audio('../sound-effects/floop.wav');
+		messages.forEach(function(message) {
+			if (message.get('name') !== userName) {
+				snd.play();
+				popUpMessage(message)
+				numOfNewMessages += 1;
+			};
+		});
+	} else {numOfNewMessages = 0};
+
+	return numOfNewMessages;
+};
+
+function popUpMessage(message) {
+	$('.pop-up-name').text(message.get('name'))
+	$('.pop-up-message').text(message.get('message'))
+	$('.pop-up').removeClass('show-pop-up');
+	$('.pop-up').addClass('show-pop-up');
+};
+
+// this function will add to or remove the number of notifications
+function changeTitleNum(numOfNewMessages) {
+	var previousNum
+	var title = $('title').text()
+
+	var diff = ( $('#chatbox').outerHeight(true) - $('.chatbox-enclosure').height())
+
+	if ( diff - ($('.chatbox-enclosure').scrollTop()) > 50 ) {
+		if (title.length > 6) {
+			previousNum = parseInt(title.slice(7, title.length - 1));
+		} else {
+			previousNum = 0
+			if (numOfNewMessages > 0) {
+				$('title').text('buzzME(' + (numOfNewMessages + previousNum) + ')');
+			}
+		};
+
+	} else { $('title').text('buzzME') };
+};
+
 
