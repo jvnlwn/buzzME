@@ -89,7 +89,8 @@ a:hover {
    
 #chatbox {  
     text-align:left;  
-    background:#fff;  
+    background:#fff;
+    position: relative;  
 }
    
 #username {  
@@ -265,3 +266,26 @@ span.pop-up-message {
 .show-pop-up {
     -webkit-animation: pop-up-effect 5s ease-in-out;
 }
+
+.temp-btn {
+    display:inline-block;
+    color:#ffffff;
+    font-family:Trebuchet MS;
+    font-size:17px;
+    font-weight:bold;
+    padding:6px 11px;
+    text-decoration:none;
+}
+
+.parse-user {
+    background: orange;
+    padding: 20px;
+}
+
+.time-stamp {
+    text-align: right;
+    display: inline-block;
+    position: absolute;
+    right: 12px;
+}
+

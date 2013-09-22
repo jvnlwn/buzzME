@@ -7,11 +7,18 @@ var MessageCollectionClass = Parse.Collection.extend({
 // collection of all the messages
 var allMessages = new MessageCollectionClass();
 
-var userName;
+// this is the variable Parse uses when specifying the current user.
+var currentUser;
+
+// when logged out, fetching will stop using clearInterval(handle)
+var handle;
 
 $('document').ready(function() {
 
-	getLatestMessages()
+	// Parse.User stuff
+	clickSignUp()
+	clickLogIn()
+	clickLogOut()
 
 	$('#submitmsg').click(function(event) {
 		event.preventDefault();
@@ -35,8 +42,14 @@ $('document').ready(function() {
 
 	$('.chatbox-enclosure').scroll(function() {
 		if ($('.chatbox-enclosure').scrollTop() < 2) {
-			getLatestMessages();
+			pagination(25);
 		};
 	});
 });
+
+function signJoeIn() {
+	$('.log-in-name').val('Joe VanLeeuwen'); 
+	$('.log-in-password').val('buzzME')
+	$('.log-in').click();
+}
 

@@ -10,31 +10,55 @@
     <script src="lib/mocha/mocha.js"></script>
     <script>mocha.setup('bdd')</script>
 
-    <!--[if lt IE 10]>
-        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+     <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="header">
+            <div class="header-wrap">
+                <h1>buzzME<img src="../app/images/buzz.png"></h1>
+
+            </div>
+        </div>
+
+        <div class="wrapper">  
+            <div id="menu">  
+                <p class="welcome">Logged in as <span class="current-user"><strong></strong></span></p>  
+                
+                <p class="logout"><a id="exit" href="#">Change Username</a></p>  
+                <div style="clear:both"></div>  
+            </div>  
+      
+            <div class="chatbox-enclosure">
+                <div id="chatbox"></div>  
+            </div>
+      
+            <form name="message" action="">  
+                
+                <input name="usermsg" type="text" id="username" size="23" placeholder="buzzer name">
 
 
-    <div id="wrapper">  
-        <div id="menu">  
-            <p class="welcome">Welcome, <b></b></p>  
-            
-            <p class="logout"><a id="exit" href="#">Exit Chat</a></p>  
-            <div style="clear:both"></div>  
-        </div>  
-  
-        <div id="chatbox"></div>  
-  
-        <form name="message" action="">  
-            
-            <input name="usermsg" type="text" id="username" size="23" placeholder="buzzer name" />
+                <input name="usermsg" type="text" id="usermsg" size="63" placeholder="buzzTHIS!">  
+                
+                <input name="submitmsg" type="submit"  id="submitmsg" value="Send">  
+            </form>  
 
+            <div class="pop-up">
+                <span class="pop-up-name">Joe</span>
+                <hr>
+                <span class="pop-up-message truncate">Hey, wanted to see how things were going.</span>
+            </div>
 
-            <input name="usermsg" type="text" id="usermsg" size="63" placeholder="buzzTHIS!" />  
-            
-            <input class="submitmsg" name="submitmsg" type="submit"  id="submitmsg" value="Send" />  
-        </form>  
-    </div> <!-- close Wrapper -->
+            <div>
+                <input class='parse-user-name' placeholder='username'>
+                <input class='parse-user-email' placeholder='email'>
+                <input class='parse-user-password' placeholder='password'>
+            </div>
+        </div> <!-- close Wrapper -->
+
+        <div class="footer">
+            <p>Created by The Iron Yard Grok Preservation Society</p>
+        </div>
 
 
     <!-- assertion framework -->
@@ -49,7 +73,8 @@
     <script src="../app/scripts/save-function.js"></script>
     <script src="../app/scripts/fetch.js"></script>
     <script src="../app/scripts/display-function.js"></script>
-    <script src="scripts/pagination.js"></script>
+    <script src="../app/scripts/pagination.js"></script>
+    <script src="../app/scripts/parse-user.js"></script>
 
     <!-- include spec files here... -->
     <script src="spec/test.js"></script>
