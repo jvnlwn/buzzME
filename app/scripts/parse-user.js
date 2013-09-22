@@ -71,6 +71,7 @@ function clickLogOut() {
 
 // >>>>>>> master
 // 	});
+	});
 };
 
 function logOut() {
