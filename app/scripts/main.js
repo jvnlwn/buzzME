@@ -25,13 +25,6 @@ $('document').ready(function() {
 		saveMessage();
 	});
 
-	$('#username').keydown(function(event) {
-		if(event.which === 13) {
-			event.preventDefault();
-			userName = $('#username').val();
-		}
-	});
-
 	$('#usermsg').keydown(function(event) {
 		if(event.which === 13) {
 			event.preventDefault();
