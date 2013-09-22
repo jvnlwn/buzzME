@@ -53,7 +53,25 @@
 				}, 5000);
 			}, 2000)
 		})
+
+		it('should display the fetched data in the last div of the chatbox', function(done) {
+			var message = new MessageClass();
+			var messageContent = 'Greatest message ever # ' + Math.floor(Math.random()*100000);
+	
+	
+			$('#usermsg').val(messageContent)
+			$('#submitmsg').click();
+	
+			setTimeout(function() {
+				setTimeout(function(){
+					expect(($('.message').last()).text()).to.equal(messageContent);
+					done();
+				}, 5000);
+			}, 2000)
+		})
 	});
+
+		
 
 	
 
