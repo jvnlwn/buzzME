@@ -1,6 +1,6 @@
-function getLatestMessages() {
+function pagination(numOfMessages) {
 	var query = new Parse.Query(MessageClass);
-	query.limit(25);
+	query.limit(numOfMessages);
 	query.descending('createdAt');
 	if (allMessages.length) {
 		query.lessThan('createdAt', allMessages.at(0).createdAt)
