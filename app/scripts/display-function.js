@@ -2,12 +2,13 @@ function display(collection) {
 	$('#chatbox').html('');
 
 	collection.each(function(message) {
-		$('#chatbox').append('<div class="chat-message ' + ifUser(message) + '"><div class="name">'+message.get('name')+'</div><div class="message">: '+message.get('message')+'</div></div>');
+		var time = moment(message.get('time'));
+		$('#chatbox').append('<div class="chat-message ' + ifUser(message) + '"><div class="name">'+message.get('alias')+'</div><div class="message">'+message.get('message')+'</div><div class="time-stamp">'+time.fromNow()+'</div></div>');
 	});
 };
 
 function ifUser(message) {
-	if (message.get('name') === userName) {
+	if (message.get('username') === currentUser.get('username')) {
 		return 'users-message';
 	} else {return ''};
 };

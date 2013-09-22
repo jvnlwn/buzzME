@@ -10,15 +10,13 @@
     <script src="lib/mocha/mocha.js"></script>
     <script>mocha.setup('bdd')</script>
 
-    <!--[if lt IE 10]>
-        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+     <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
 
-
-
-    <div class="header">
+        <div class="header">
             <div class="header-wrap">
-                <h1>buzzME<img src="images/buzz.png"></h1>
+                <h1>buzzME<img src="../app/images/buzz.png"></h1>
 
             </div>
         </div>
@@ -50,12 +48,29 @@
                 <hr>
                 <span class="pop-up-message truncate">Hey, wanted to see how things were going.</span>
             </div>
-        </div> 
-        <!-- close Wrapper -->
+
+            <div class="parse-user">
+                <div>
+                    <input class='sign-up-alias' placeholder='alias'>
+                    <input class='sign-up-name' placeholder='username'>
+                    <input class='sign-up-email' placeholder='email'>
+                    <input class='sign-up-password' placeholder='password'>
+                    <input name="sign-up" type="submit"  class="sign-up temp-btn" value="Sign Up">
+                </div>
+                <div>
+                    <input class='log-in-name' placeholder='username'>
+                    <input class='log-in-password' placeholder='password'>
+                    <input name="log-in" type="submit"  class="log-in temp-btn" value="Log In">
+                    <input name="log-out" type="submit"  class="log-out temp-btn" value="Log Out">
+                </div>
+            </div>
+
+        </div> <!-- close Wrapper -->
+        </div> <!-- close Wrapper -->
 
         <div class="footer">
             <p>Created by The Iron Yard Grok Preservation Society</p>
-        </div><!-- close Wrapper -->
+        </div>
 
 
     <!-- assertion framework -->
@@ -64,6 +79,7 @@
 
     <!-- include source files here... -->
     <script src="http://www.parsecdn.com/js/parse-1.2.12.min.js"></script>
+    <script src="../app/bower_components/momentjs/moment.js"></script>
     <script src="../app/bower_components/jquery/jquery.js"></script>
     <script src="../app/scripts/parse-initialize.js"></script>
     <script src="../app/scripts/main.js"></script>
@@ -71,6 +87,8 @@
     <script src="../app/scripts/fetch.js"></script>
     <script src="../app/scripts/display-function.js"></script>
     <script src="../app/scripts/pagination.js"></script>
+    <script src="../app/scripts/parse-user.js"></script>
+
 
     <!-- include spec files here... -->
     <script src="spec/test.js"></script>
