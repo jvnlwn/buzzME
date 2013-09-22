@@ -48,11 +48,12 @@ function clickLogIn() {
 };
 
 function clickLogOut() {
-	$('.log-out').click(function() {
+	$('.logout').click(function() {
 		Parse.User.logOut();
 		currentUser = Parse.User.current();
 		clearInterval(handle);
 		console.log(currentUser);
+
 	});
 };
 
