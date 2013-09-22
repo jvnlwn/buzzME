@@ -54,6 +54,7 @@ function clickLogIn() {
 };
 
 function clickLogOut() {
+// <<<<<<< HEAD
 	$('.log-out').click(function() {
 		currentUser.set("loggedIn", false);
 		currentUser.save(null, {
@@ -61,7 +62,15 @@ function clickLogOut() {
 				logOut()
 			}
 		});
-	});
+// =======
+// 	$('.logout').click(function() {
+// 		Parse.User.logOut();
+// 		currentUser = Parse.User.current();
+// 		clearInterval(handle);
+// 		console.log(currentUser);
+
+// >>>>>>> master
+// 	});
 };
 
 function logOut() {
