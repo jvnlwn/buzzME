@@ -31,7 +31,7 @@
             <div id="menu">  
                 <p class="welcome">Logged in as <span class="current-user"><strong></strong></span></p>  
                 
-                <p class="logout"><a id="exit" href="#">Change Username</a></p>  
+                <p class="logout"><a id="exit" href="#"  onclick='overlay()'>Change Username</a></p>  
                 <div style="clear:both"></div>  
             </div>  
       
@@ -59,24 +59,24 @@
         </div> <!-- close Wrapper -->
 
         <div class="footer">
-            <p>Created by The Iron Yard Grok Preservation Society</p>
+            <p>Created by The Iron Yard Grok Society For The Preservation Of Internet Wizardry</p>
         </div>
 
-        <div class="modal">
+        <div id="modal">
             <div class="modal-box">
                 <div class="parse-user">
                     <input class='sign-up-alias' placeholder='alias'>
                     <input class='sign-up-name' placeholder='username'>
                     <input class='sign-up-email' placeholder='email'>
                     <input class='sign-up-password' placeholder='password'>
-                    <input name="sign-up" type="submit"  class="sign-up temp-btn" value="Sign Up">
+                    <input name="sign-up" onclick='overlay()' type="submit"  class="sign-up temp-btn" value="Sign Up">
                 </div>
 
                 <div class="parse-user">
                     <input class='log-in-name' placeholder='username'>
                     <input class='log-in-password' placeholder='password'>
-                    <input name="log-in" type="submit"  class="log-in temp-btn" value="Log In">
-                    <input name="log-out" type="submit"  class="log-out temp-btn" value="Log Out">
+                    <input name="log-in" onclick='overlay()' type="submit"  class="log-in temp-btn" value="Log In">
+                    <input name="log-out" onclick='overlay()' type="submit"  class="log-out temp-btn" value="Log Out">
                 </div>
             </div>
          </div>
@@ -112,5 +112,5 @@
         <!-- build:js(.tmp) scripts/coffee.js -->
         <script src="scripts/hello.js"></script>
         <!-- endbuild -->
-</body>
+    </body>
 </html>

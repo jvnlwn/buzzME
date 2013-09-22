@@ -45,6 +45,10 @@ $('document').ready(function() {
 			pagination(25);
 		};
 	});
+
+overlay()
+
+
 });
 
 function signJoeIn() {
@@ -52,4 +56,11 @@ function signJoeIn() {
 	$('.log-in-password').val('buzzME')
 	$('.log-in').click();
 }
+
+function overlay() {
+	el = document.getElementById("modal");
+	el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+}
+
+
 
