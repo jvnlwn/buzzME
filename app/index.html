@@ -31,7 +31,7 @@
             <div id="menu">  
                 <p class="welcome">Logged in as <span class="current-user"><strong></strong></span></p>  
                 
-                <p class="logout"><a id="exit" href="#"  onclick='overlay()'>Change Username</a></p>  
+                <p class="logout"><a id="exit" href="#"  onclick='clickLogOut();overlay()'>Log-Out</a></p>  
                 <div style="clear:both"></div>  
             </div>  
       
@@ -65,12 +65,12 @@
                     <input class='sign-up-alias' placeholder='alias'>
                     <input class='sign-up-name' placeholder='username'>
                     <input class='sign-up-email' placeholder='email'>
-                    <input class='sign-up-password' placeholder='password'>
+                    <input class='sign-up-password' placeholder='password' type='password'>
                     <input name="sign-up" onclick='overlay()' type="submit"  class="sign-up temp-btn" value="Sign Up">
                     <input class='log-in-name' placeholder='username'>
-                    <input class='log-in-password' placeholder='password'>
+                    <input class='log-in-password' placeholder='password' type='password'>
                     <input name="log-in" onclick='overlay()' type="submit"  class="log-in temp-btn" value="Log In">
-                    <input name="log-out" onclick='overlay()'nic type="submit"  class="log-out temp-btn" value="Log Out">
+                
                 </div>
             </div>
          </div>
