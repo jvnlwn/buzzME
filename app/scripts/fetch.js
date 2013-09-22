@@ -1,19 +1,22 @@
-setInterval(function()  {
-	var query = new Parse.Query(MessageClass);
-	query.greaterThan('createdAt', allMessages.at(allMessages.length - 1).createdAt)
-	query.find({
- 		success: function(messages) {
- 			allMessages.add(messages);
-    		display(allMessages);
-			changeTitleNum( newMessageSound( messages, scrolltoBottomIf() ) );
-  		},
-  		error: function(allMessages, error) {
-    		console.log('you blew it')
-  		}
-	})
+function continuousFetch() {
+	handle = setInterval(function()  {
+		var query = new Parse.Query(MessageClass);
+		query.greaterThan('createdAt', allMessages.at(allMessages.length - 1).createdAt)
+		query.find({
+	 		success: function(messages) {
+	 			console.log('fetched')
+	 			allMessages.add(messages);
+	    		display(allMessages);
+				changeTitleNum( newMessageSound( messages, scrolltoBottomIf() ) );
+	  		},
+	  		error: function(allMessages, error) {
+	    		console.log('you blew it')
+	  		}
+		})
 
-},
-3000);
+	},
+	3000);
+};
 
 function scrolltoBottomIf() {
 	var diff = ( $('#chatbox').outerHeight(true) - $('.chatbox-enclosure').height())
@@ -41,7 +44,7 @@ function newMessageSound(messages, unseen) {
 	if (unseen) {
 		var snd = new Audio('../sound-effects/floop.wav');
 		messages.forEach(function(message) {
-			if (message.get('name') !== userName) {
+			if (message.get('name') !== currentUser.get('alias')) {
 				snd.play();
 				popUpMessage(message)
 				numOfNewMessages += 1;

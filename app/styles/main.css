@@ -44,7 +44,8 @@ h1 {
    
 form, p, span {  
     margin:0;  
-    padding:0; }  
+    padding:0; 
+}  
    
 input { 
    font: 16px helvetica;
@@ -52,7 +53,7 @@ input {
     height: 35px;
     border-radius: 2px;
     box-shadow: inset 0 2px 18px -6px black;
- }  
+}  
    
 a {  
     color:white;  
@@ -82,6 +83,7 @@ a:hover {
     border-radius: 12px;
     box-shadow: 0 10px 32px -6px rgb(64, 66, 51);
     position: relative; }  
+
    
 #loginform { padding-top:18px; }  
    
@@ -89,16 +91,19 @@ a:hover {
    
 #chatbox {  
     text-align:left;  
-    background:#fff;  
+    background:#fff;
+    position: relative;  
 }
    
 #username {  
     width:23%;  
-    border:1px solid #ACD8F0; }
+    border:1px solid #ACD8F0;
+}
 
 #usermsg {  
     width:60%;  
-    border:1px solid #ACD8F0; }  
+    border:1px solid #ACD8F0; 
+}  
    
 #submitmsg {
         
@@ -168,6 +173,7 @@ a:hover {
     vertical-align: top
 
 }
+
 .message {
     margin-left:10px;
     max-width:80%;
@@ -265,3 +271,26 @@ span.pop-up-message {
 .show-pop-up {
     -webkit-animation: pop-up-effect 5s ease-in-out;
 }
+
+.temp-btn {
+    display:inline-block;
+    color:#ffffff;
+    font-family:Trebuchet MS;
+    font-size:17px;
+    font-weight:bold;
+    padding:6px 11px;
+    text-decoration:none;
+}
+
+.parse-user {
+    background: orange;
+    padding: 20px;
+}
+
+.time-stamp {
+    text-align: right;
+    display: inline-block;
+    position: absolute;
+    right: 12px;
+}
+
