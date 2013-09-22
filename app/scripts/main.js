@@ -25,13 +25,6 @@ $('document').ready(function() {
 		saveMessage();
 	});
 
-	$('#username').keydown(function(event) {
-		if(event.which === 13) {
-			event.preventDefault();
-			userName = $('#username').val();
-		}
-	});
-
 	$('#usermsg').keydown(function(event) {
 		if(event.which === 13) {
 			event.preventDefault();
@@ -45,6 +38,10 @@ $('document').ready(function() {
 			pagination(25);
 		};
 	});
+
+overlay()
+
+
 });
 
 function signJoeIn() {
@@ -52,4 +49,13 @@ function signJoeIn() {
 	$('.log-in-password').val('buzzME')
 	$('.log-in').click();
 }
+
+function overlay() {
+	el = document.getElementById("modal");
+	el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+}
+
+
+
+
 

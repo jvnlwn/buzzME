@@ -31,7 +31,7 @@
             <div id="menu">  
                 <p class="welcome">Logged in as <span class="current-user"><strong></strong></span></p>  
                 
-                <p class="logout"><a id="exit" href="#">Change Username</a></p>  
+                <p class="logout"><a id="exit" href="#"  onclick='clickLogOut();overlay()'>Log-Out</a></p>  
                 <div style="clear:both"></div>  
             </div>  
       
@@ -41,13 +41,11 @@
       
             <form name="message" action="">  
                 
-                <input name="usermsg" type="text" id="username" size="23" placeholder="buzzer name">
-
-
                 <input name="usermsg" type="text" id="usermsg" size="63" placeholder="buzzTHIS!">  
                 
                 <input name="submitmsg" type="submit"  id="submitmsg" value="Send">  
             </form>  
+
 
             <div class="pop-up">
                 <span class="pop-up-name">Joe</span>
@@ -55,30 +53,32 @@
                 <span class="pop-up-message truncate">Hey, wanted to see how things were going.</span>
             </div>
 
-            <div class="parse-user">
-                <div>
-                    <input class='sign-up-alias' placeholder='alias'>
-                    <input class='sign-up-name' placeholder='username'>
-                    <input class='sign-up-email' placeholder='email'>
-                    <input class='sign-up-password' placeholder='password'>
-                    <input name="sign-up" type="submit"  class="sign-up temp-btn" value="Sign Up">
-                </div>
-                <div>
-                    <input class='log-in-name' placeholder='username'>
-                    <input class='log-in-password' placeholder='password'>
-                    <input name="log-in" type="submit"  class="log-in temp-btn" value="Log In">
-                    <input name="log-out" type="submit"  class="log-out temp-btn" value="Log Out">
-                </div>
-            </div>
-
         </div> <!-- close Wrapper -->
 
         <div class="footer">
-            <p>Created by The Iron Yard Grok Preservation Society</p>
+            <p>Created by The Iron Yard Society For The Preservation Of Internet Wizardry</p>
         </div>
 
+        <div id="modal">
+            <div class="modal-box">
+                <div class="parse-user">
+                    <input class='sign-up-alias' placeholder='alias'>
+                    <input class='sign-up-name' placeholder='username'>
+                    <input class='sign-up-email' placeholder='email'>
+                    <input class='sign-up-password' placeholder='password' type='password'>
+                    <input name="sign-up" onclick='overlay()' type="submit"  class="sign-up temp-btn" value="Sign Up">
+                </div>
 
-        <!-- build:js scripts/vendor.js -->
+                <div class="parse-user">
+                    <input class='log-in-name' placeholder='username'>
+                    <input class='log-in-password' placeholder='password' type='password'>
+                    <input name="log-in" onclick='overlay()' type="submit"  class="log-in temp-btn" value="Log In">
+                </div>
+            </div>
+         </div>
+
+
+        <!  -- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/momentjs/moment.js"></script>
         <script src="bower_components/jquery/jquery.js"></script>
@@ -108,5 +108,5 @@
         <!-- build:js(.tmp) scripts/coffee.js -->
         <script src="scripts/hello.js"></script>
         <!-- endbuild -->
-</body>
+    </body>
 </html>
