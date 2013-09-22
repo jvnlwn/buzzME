@@ -50,7 +50,6 @@ function clickLogIn() {
 function clickLogOut() {
 	$('.logout').click(function() {
 		Parse.User.logOut();
-		overlay();
 		currentUser = Parse.User.current();
 		clearInterval(handle);
 		console.log(currentUser);
