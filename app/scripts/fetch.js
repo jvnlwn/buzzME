@@ -13,9 +13,20 @@ function continuousFetch() {
 	    		console.log('you blew it')
 	  		}
 		})
-
+		userIsLoggedIn();
 	},
 	3000);
+};
+
+function userIsLoggedIn() {
+	currentLoggedInUsers.fetch({
+		success: function(collection) {
+			$('.active-users ul').html('');
+			collection.each(function(user) {
+				$('.active-users ul').append('<li>'+user.get('alias')+'</li>');
+			});
+		}
+	});
 };
 
 function scrolltoBottomIf() {
@@ -81,5 +92,6 @@ function changeTitleNum(numOfNewMessages) {
 
 	} else { $('title').text('buzzME') };
 };
+
 
 

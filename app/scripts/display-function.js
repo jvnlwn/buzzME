@@ -3,7 +3,7 @@ function display(collection) {
 
 	collection.each(function(message) {
 		var time = moment(message.get('time'));
-		$('#chatbox').append('<div class="chat-message ' + ifUser(message) + '"><div class="name">'+message.get('alias')+'</div><div class="message">'+message.get('message')+'</div><div class="time-stamp">'+time.fromNow()+'</div></div>');
+		$('#chatbox').append('<div class="chat-message ' + ifUser(message) + '"><div class="name ' + ifUser(message) + '">'+message.get('alias')+'</div><div class="message">'+message.get('message')+'</div><div class="time-stamp">'+time.fromNow()+'</div></div>');
 	});
 };
 

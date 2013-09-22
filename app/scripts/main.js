@@ -4,8 +4,16 @@ var MessageCollectionClass = Parse.Collection.extend({
 	model: MessageClass
 });
 
+var CurrentUserCollectionClass = Parse.Collection.extend({
+	model: Parse.User,
+	query: (new Parse.Query(Parse.User)).equalTo('loggedIn', true)
+});
+
 // collection of all the messages
 var allMessages = new MessageCollectionClass();
+
+// collection of all logged in users
+var currentLoggedInUsers = new CurrentUserCollectionClass();
 
 // this is the variable Parse uses when specifying the current user.
 var currentUser;
