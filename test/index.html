@@ -15,26 +15,47 @@
     <![endif]-->
 
 
-    <div id="wrapper">  
-        <div id="menu">  
-            <p class="welcome">Welcome, <b></b></p>  
-            
-            <p class="logout"><a id="exit" href="#">Exit Chat</a></p>  
-            <div style="clear:both"></div>  
-        </div>  
-  
-        <div id="chatbox"></div>  
-  
-        <form name="message" action="">  
-            
-            <input name="usermsg" type="text" id="username" size="23" placeholder="buzzer name" />
+
+    <div class="header">
+            <div class="header-wrap">
+                <h1>buzzME<img src="images/buzz.png"></h1>
+
+            </div>
+        </div>
+
+        <div class="wrapper">  
+            <div id="menu">  
+                <p class="welcome">Logged in as <span class="current-user"><strong></strong></span></p>  
+                
+                <p class="logout"><a id="exit" href="#">Change Username</a></p>  
+                <div style="clear:both"></div>  
+            </div>  
+      
+            <div class="chatbox-enclosure">
+                <div id="chatbox"></div>  
+            </div>
+      
+            <form name="message" action="">  
+                
+                <input name="usermsg" type="text" id="username" size="23" placeholder="buzzer name">
 
 
-            <input name="usermsg" type="text" id="usermsg" size="63" placeholder="buzzTHIS!" />  
-            
-            <input class="submitmsg" name="submitmsg" type="submit"  id="submitmsg" value="Send" />  
-        </form>  
-    </div> <!-- close Wrapper -->
+                <input name="usermsg" type="text" id="usermsg" size="63" placeholder="buzzTHIS!">  
+                
+                <input name="submitmsg" type="submit"  id="submitmsg" value="Send">  
+            </form>  
+
+            <div class="pop-up">
+                <span class="pop-up-name">Joe</span>
+                <hr>
+                <span class="pop-up-message truncate">Hey, wanted to see how things were going.</span>
+            </div>
+        </div> 
+        <!-- close Wrapper -->
+
+        <div class="footer">
+            <p>Created by The Iron Yard Grok Preservation Society</p>
+        </div><!-- close Wrapper -->
 
 
     <!-- assertion framework -->
@@ -49,7 +70,7 @@
     <script src="../app/scripts/save-function.js"></script>
     <script src="../app/scripts/fetch.js"></script>
     <script src="../app/scripts/display-function.js"></script>
-    <script src="scripts/pagination.js"></script>
+    <script src="../app/scripts/pagination.js"></script>
 
     <!-- include spec files here... -->
     <script src="spec/test.js"></script>
