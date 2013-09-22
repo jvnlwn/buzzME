@@ -49,11 +49,23 @@
                 <span class="pop-up-message truncate">Hey, wanted to see how things were going.</span>
             </div>
 
-            <div>
-                <input class='parse-user-name' placeholder='username'>
-                <input class='parse-user-email' placeholder='email'>
-                <input class='parse-user-password' placeholder='password'>
+            <div class="parse-user">
+                <div>
+                    <input class='sign-up-alias' placeholder='alias'>
+                    <input class='sign-up-name' placeholder='username'>
+                    <input class='sign-up-email' placeholder='email'>
+                    <input class='sign-up-password' placeholder='password'>
+                    <input name="sign-up" type="submit"  class="sign-up temp-btn" value="Sign Up">
+                </div>
+                <div>
+                    <input class='log-in-name' placeholder='username'>
+                    <input class='log-in-password' placeholder='password'>
+                    <input name="log-in" type="submit"  class="log-in temp-btn" value="Log In">
+                    <input name="log-out" type="submit"  class="log-out temp-btn" value="Log Out">
+                </div>
             </div>
+
+        </div> <!-- close Wrapper -->
         </div> <!-- close Wrapper -->
 
         <div class="footer">
@@ -67,6 +79,7 @@
 
     <!-- include source files here... -->
     <script src="http://www.parsecdn.com/js/parse-1.2.12.min.js"></script>
+    <script src="../app/bower_components/momentjs/moment.js"></script>
     <script src="../app/bower_components/jquery/jquery.js"></script>
     <script src="../app/scripts/parse-initialize.js"></script>
     <script src="../app/scripts/main.js"></script>
@@ -74,10 +87,8 @@
     <script src="../app/scripts/fetch.js"></script>
     <script src="../app/scripts/display-function.js"></script>
     <script src="../app/scripts/pagination.js"></script>
-<<<<<<< HEAD
     <script src="../app/scripts/parse-user.js"></script>
-=======
->>>>>>> flackstyling
+
 
     <!-- include spec files here... -->
     <script src="spec/test.js"></script>

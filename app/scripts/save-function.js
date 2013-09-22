@@ -8,8 +8,10 @@ function saveMessage() {
 
 
 	// call display function here, or simply append li/span
+	console.log('yo')
 	$('#chatbox').append('<div class="' + ifUser(message) + '"><div class="name">'+message.get('alias')+'</div><div class="message">'+message.get('message')+'</div></div>')
 	scrollToBottom();
+	console.log('yo')
 
 	message.save(null, {
 		success: function(message) {
