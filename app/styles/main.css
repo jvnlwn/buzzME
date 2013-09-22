@@ -177,7 +177,7 @@ a:hover {
 
 .message {
     margin-left:10px;
-    max-width:80%;
+    max-width: 60%;
     display:inline-block;
 }
    
@@ -221,7 +221,7 @@ a:hover {
     padding-bottom:10px;  
     background:#fff;  
     height:393px;  
-    width:90%;  
+    width:70%;  
     border:1px solid #ACD8F0; 
     overflow-y: scroll;
 }
@@ -297,11 +297,42 @@ span.pop-up-message {
 
 .active-users {
     display: inline-block;
-    height: 100px;
-    width: 100px;
-    background: #acacac;
+    height: 250px;
+    width: 11%;
+    background: #B3C1D1;
     position: absolute;
-    right: 0;
-    top: 45px;
+    right: 23px;
+    top: 86px;
+    overflow-y: scroll;
+    border-radius: 5px;
+    z-index: 100;
 }
 
+.active-users ul {
+    color: rgb(0,102,153);
+    list-style: none;
+    margin: 10px 10px 10px 20px;
+    padding: 0;
+    text-align: left;
+}
+
+.active-users li {
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.active-users-header {
+    color: #FFF;
+    height: 79px;
+    width: 8%;
+    line-height: 25px;
+    position: absolute;
+    right: 41px;
+    top: 62px;
+    background: linear-gradient(to bottom, #fbb450 5%, #f89306 100%);
+    box-shadow: inset 0px 1px 0px 0px #ffe0b5;
+    text-shadow: 0px 1px 0px #8f7f24;
+    border-radius: 33px;
+}

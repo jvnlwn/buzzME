@@ -8,11 +8,11 @@ function signUp() {
  
 	user.signUp(null, {
 	  success: function(user) {
-	    console.log('yayayaya');
+	  	currentUser = Parse.User.current();
+	  	showAlias()
 	    modalOffExample();
 	  },
 	  error: function(user, error) {
-	  	currentUser = Parse.User.current();
 	    // Show the error message somewhere and let the user try again.
 	    alert("Error: " + error.code + " " + error.message);
 	  }
@@ -23,11 +23,12 @@ function logIn() {
 	Parse.User.logIn($('.log-in-name').val(), $('.log-in-password').val(), {
 	  	success: function(user) {
 	  		currentUser = Parse.User.current();
+	  		showAlias();
+	  		showActiveUsers(currentUser);
 	  		currentUser.set("loggedIn", true);
 	  		currentUser.save(null, {
 				success: function() {
 	  				modalOffExample();
-	    			alert('Hey, ' + user.get('username'))
 				}
 			});
 	  	},
@@ -36,7 +37,6 @@ function logIn() {
 	    	if ( error.code === 101) {
 	    		alert('Username or Password are invalid.');
 	    	}
-	    	// alert("Error: " + error.code + " " + error.message);
 	  	}
 	})
 };
@@ -70,6 +70,10 @@ function logOut() {
 	currentUser = Parse.User.current();
 	clearInterval(handle);
 	console.log(currentUser);
+}
+
+function showAlias() {
+	$('.current-user').text(currentUser.get('alias'));
 }
 
 // must only be called one time!!! will have to figure out how we'll call it.

@@ -55,9 +55,3 @@ $('document').ready(function() {
 	});
 });
 
-function signJoeIn() {
-	$('.log-in-name').val('Joe VanLeeuwen'); 
-	$('.log-in-password').val('buzzME')
-	$('.log-in').click();
-}
-

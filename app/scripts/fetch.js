@@ -23,11 +23,16 @@ function userIsLoggedIn() {
 		success: function(collection) {
 			$('.active-users ul').html('');
 			collection.each(function(user) {
-				$('.active-users ul').append('<li>'+user.get('alias')+'</li>');
+				showActiveUsers(user);
 			});
 		}
 	});
+
 };
+
+function showActiveUsers(user) {
+	$('.active-users ul').append('<li>'+user.get('alias')+'</li>');
+}
 
 function scrolltoBottomIf() {
 	var diff = ( $('#chatbox').outerHeight(true) - $('.chatbox-enclosure').height())
