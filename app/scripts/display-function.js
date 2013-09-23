@@ -4,13 +4,13 @@ function display(collection) {
 	collection.each(function(message) {
 		template(message, ifUser(message));
 	});
-};
+}
 
 function ifUser(message) {
 	if (message.get('username') === currentUser.get('username')) {
 		return 'users-message';
-	} else {return ''};
-};
+	} else {return ''}
+}
 
 function template(message, klass) {
 	var time = moment(message.get('time'));
