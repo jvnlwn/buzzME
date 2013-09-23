@@ -21,16 +21,21 @@ var currentUser;
 // when logged out, fetching will stop using clearInterval(handle)
 var handle;
 
+// keep track of whether use is active or not.
+var userActive = moment();
+
 $('document').ready(function() {
 
 	// Parse.User stuff
-	clickSignUp()
-	clickLogIn()
-	clickLogOut()
+	clickSignUp();
+	clickLogIn();
+	clickLogOut();
 
 	$('#submitmsg').click(function(event) {
 		event.preventDefault();
 		saveMessage();
+		$('#usermsg').val('');
+		userActive = moment();
 	});
 
 	$('#usermsg').keydown(function(event) {
@@ -38,6 +43,18 @@ $('document').ready(function() {
 			event.preventDefault();
 			saveMessage();
 			$(this).val('');
+			userActive = moment();
+		}
+	});
+
+	$('.change-alias').keydown(function(event) {
+		if(event.which === 13) {
+			event.preventDefault();
+			currentUser.set('alias', $(this).val())
+			showAlias()
+			currentUser.save();
+			$(this).val('');
+			userActive = moment();
 		}
 	});
 
@@ -47,10 +64,19 @@ $('document').ready(function() {
 		};
 	});
 
-overlay()
+	$('html').click(function() {
+		userActive = moment();
+	})
 
+	overlay()
 
 });
+
+function signJoeIn() {
+	$('.log-in-name').val('Joe VanLeeuwen');
+	$('.log-in-password').val('buzzME');
+	$('.log-in').click();
+}
 
 function overlay() {
 	el = document.getElementById("modal");

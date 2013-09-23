@@ -8,15 +8,12 @@ function saveMessage() {
 
 
 	// call display function here, or simply append li/span
-	console.log('yo')
-	$('#chatbox').append('<div class="' + ifUser(message) + '"><div class="name">'+message.get('alias')+'</div><div class="message">'+message.get('message')+'</div></div>')
+	var klass = 'users-message';
+	template(message, klass)
 	scrollToBottom();
-	console.log('yo')
 
 	message.save(null, {
 		success: function(message) {
-			console.log(message, ' it is saved');
-			// probably nothing here
 		},
 		error: function(message, error) {
 			console.log(error.description);

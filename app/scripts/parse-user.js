@@ -4,12 +4,16 @@ function signUp() {
 	user.set("password", $('.sign-up-password').val());
 	user.set("email",    $('.sign-up-email').val());
 	user.set("alias",    $('.sign-up-alias').val());
-	user.set("loggedIn",    true);
+	user.set("loggedIn", true);
+	user.set("active",   true);
  
 	user.signUp(null, {
 	  success: function(user) {
+	  	overlay();
+	  	clearInputs()
 	  	currentUser = Parse.User.current();
-	  	showAlias()
+	  	var klass = 'user-is-active'
+	  	showActiveUsers(user, klass);
 	    modalOffExample();
 	  },
 	  error: function(user, error) {
@@ -22,10 +26,15 @@ function signUp() {
 function logIn() {
 	Parse.User.logIn($('.log-in-name').val(), $('.log-in-password').val(), {
 	  	success: function(user) {
+	  		overlay();
+	  		clearInputs()
 	  		currentUser = Parse.User.current();
 	  		showAlias();
-	  		showActiveUsers(currentUser);
+	  		var klass = 'user-is-active'
+	  		showActiveUsers(currentUser, klass);
+	  		// add loggedIn and active keys
 	  		currentUser.set("loggedIn", true);
+	  		currentUser.set("active", true);
 	  		currentUser.save(null, {
 				success: function() {
 	  				modalOffExample();
@@ -36,7 +45,7 @@ function logIn() {
 	    	// Show the error message somewhere and let the user try again.
 	    	if ( error.code === 101) {
 	    		alert('Username or Password are invalid.');
-	    	}
+	    	} else {console.log("Error: " + error.code + " " + error.message)}
 	  	}
 	})
 };
@@ -49,28 +58,22 @@ function clickSignUp() {
 
 function clickLogIn() {
 	$('.log-in').click(function() {
-		logIn()
+		logIn();
 	});
 };
 
 function clickLogOut() {
-// <<<<<<< HEAD
-	$('.log-out').click(function() {
+	$('.logout').click(function() {
 		currentUser.set("loggedIn", false);
 		currentUser.save(null, {
 			success: function() {
-				logOut()
+				logOut();
+				overlay();
+			},
+			error: function(error) {
+				console.log(error.description)
 			}
 		});
-// =======
-// 	$('.logout').click(function() {
-// 		Parse.User.logOut();
-// 		currentUser = Parse.User.current();
-// 		clearInterval(handle);
-// 		console.log(currentUser);
-
-// >>>>>>> master
-// 	});
 	});
 };
 
@@ -79,7 +82,6 @@ function logOut() {
 	Parse.User.logOut();
 	currentUser = Parse.User.current();
 	clearInterval(handle);
-	console.log(currentUser);
 }
 
 function showAlias() {
@@ -90,5 +92,11 @@ function showAlias() {
 function modalOffExample() {
 	pagination(25);
 	continuousFetch();
+}
+
+function clearInputs() {
+	$('input').each(function(arg) {
+		$(this).val('');
+	})
 }
 
