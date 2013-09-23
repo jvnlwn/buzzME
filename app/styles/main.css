@@ -446,6 +446,12 @@ span.pop-up-message {
     right: 0;
 }
 
+.buzz-me-title img {
+    height: 37px;
+    width: 36px;
+    vertical-align: top;
+    margin-left: -37px;
+}
 
 
 
