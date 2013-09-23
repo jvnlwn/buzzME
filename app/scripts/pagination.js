@@ -7,6 +7,8 @@ function pagination(numOfMessages) {
 	}
 	query.find({
  		success: function(messages) {
+ 			// getting initial difference of the height of chatbox and of its parent div. Returnin the overflow height.
+ 			var diff = getDiff();
  			// switchOrder is necessary to display messages in proper order. Most recent being in the bottom of the chat-box
  			var switchOrder = [];
  			// this will push previous messages to the back of switchOrder
@@ -14,7 +16,6 @@ function pagination(numOfMessages) {
  				switchOrder.push(message);
  			});
 
- 			var length = allMessages.length;
  			// remove any previous messages from collection so as to not attempt to add identical messages. (Won't let you anyhow.)
  			allMessages.reset()
  			
@@ -29,7 +30,8 @@ function pagination(numOfMessages) {
 			// display all the messages in the chat-box
     		display(allMessages);
 
-    		scrollToPosition(length)
+    		// scroll down to the top of the previous messages
+    		scrollToPosition(getDiff() - diff)
   		},
   		error: function(allMessages, error) {
     		console.log('you blew it')
