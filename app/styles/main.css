@@ -49,7 +49,7 @@ h1 {
     font-size:28px;
     color:white;
 }
-   
+
 form, p, span {  
     margin:0;  
     padding:0; 
@@ -61,16 +61,16 @@ input {
     height: 35px;
     border-radius: 2px;
     box-shadow: inset 0 2px 18px -6px black;
-    margin:4px;
+    margin: 4px;
+    outline-offset: 0;
+    outline: none;
+    border: none;
+    box-shadow: none;
 }  
    
 a {  
     color:white;  
     text-decoration:none;
-}  
-   
-a:hover { 
-    text-decoration:underline; 
 }  
    
 .wrapper, #loginform {  
@@ -167,6 +167,7 @@ a:hover {
 }
 
 .chat-message {
+    background: #FFF;
     border-bottom: 1px solid #ababab;
 }
 
@@ -174,7 +175,7 @@ a:hover {
     border-right:1px solid #acacac;
     padding-right:10px;
     padding-left:5px;
-    background-color:#ACD8F0;
+    background: rgb(255, 252, 229);
     width:15%;
     display:inline-block;
     overflow: hidden;
@@ -185,7 +186,7 @@ a:hover {
 
 .message {
     margin-left:10px;
-    max-width:80%;
+    max-width: 60%;
     display:inline-block;
 }
    
@@ -194,16 +195,32 @@ a:hover {
 #menu { padding:12.5px 25px 12.5px 25px; }  
    
 .welcome { 
-    float:left;
-    color:#FCD40F;
+    float: left;
+    color: #FFF;
  }  
+
+ .current-user {
+    color: #FCD40F;
+ }
+
+ .change-alias {
+    position: absolute;
+    left: 20px;
+    top: 42px;
+    width: 124px;
+ }
+
+ .logout {
+    display: inline-block;
+    position: relative;
+ }
    
 .logout { float:right; }  
    
 .msgln { margin:0 0 2px 0; }  
 
 .users-message {
-    background:rgba(255, 249, 203, 0.29)
+    background: rgb(225, 237, 245);
 }
 
 .footer {
@@ -236,7 +253,7 @@ a:hover {
     padding-bottom:10px;  
     background:#fff;  
     height:393px;  
-    width:90%;  
+    width:70%;  
     border:1px solid #ACD8F0; 
     overflow-y: scroll;
 }
@@ -289,13 +306,22 @@ span.pop-up-message {
 }
 
 .temp-btn {
-    display:inline-block;
-    color:#ffffff;
-    font-family:Trebuchet MS;
-    font-size:17px;
-    font-weight:bold;
-    padding:6px 11px;
-    text-decoration:none;
+    /*position: absolute;
+    left: 0;*/
+    height: 37px;
+    width: 82px;
+    color: #FFFFFF;
+    font-family: Trebuchet MS;
+    font-size: 15px;
+    padding: 6px 11px;
+    text-decoration: none;
+    background: linear-gradient(to bottom, rgb(53, 144, 189) 0%, rgb(0,102,153) 100%);
+    box-shadow: inset 0 1px 1px 0px #7AB4FF;
+    border-radius: 3px;
+}
+
+.temp-btn:hover {
+    background: linear-gradient(to bottom, rgb(72, 166, 213) 0%, rgb(0,102,153) 100%);
 }
 
 .parse-user {
@@ -306,6 +332,8 @@ span.pop-up-message {
 
 .parse-user input {
      display:block;
+     border: 2px inset #FFCE4F;
+     margin-bottom: 8px;
 }
 
 .divider {
@@ -319,7 +347,7 @@ span.pop-up-message {
     display: inline-block;
     position: absolute;
     right: 12px;
-    color:grey;
+    color: #acacac;
 }
 
 #modal {
@@ -331,14 +359,96 @@ span.pop-up-message {
      height:100%;
      text-align:center;
      z-index: 1000;
+     background: rgb(0,102,153);
+}
+
+.buzz-me-title {
+    color: #FFF;
+    font-family:'Rationale';
+    font-size: 200px;
+    margin: 75px auto 0px;
+    text-shadow: 5px 5px rgb(18, 89, 124);
 }
 
 .modal-box {
-    width:44%;
-    margin: 100px auto;
+    width: 242px;
+    margin: 0 auto;
     text-align:center;    
     background: orange;
     padding: 20px;
     border-radius: 6px;
 }
+
+.active-users {
+    display: inline-block;
+    height: 250px;
+    width: 11%;
+    background: #B3C1D1;
+    position: absolute;
+    right: 23px;
+    top: 86px;
+    overflow-y: scroll;
+    border-radius: 5px;
+    z-index: 100;
+    border: 1px solid #314964;
+}
+
+.active-users ul {
+    color: rgb(0,102,153);
+    list-style: none;
+    margin: 10px 10px 10px 25px;
+    padding: 0;
+    text-align: left;
+}
+
+.active-users li {
+    position: relative;
+    white-space: nowrap;
+    /*overflow: hidden;*/
+    text-overflow: ellipsis;
+}
+
+.active-users-header {
+    color: #FFF;
+    height: 79px;
+    width: 8%;
+    line-height: 25px;
+    position: absolute;
+    right: 41px;
+    top: 62px;
+    background: linear-gradient(to bottom, #fbb450 5%, #f89306 100%);
+    box-shadow: inset 0px 1px 0px 0px #ffe0b5;
+    text-shadow: 0px 1px 0px #8f7f24;
+    border-radius: 33px;
+}
+
+.user-is-active {
+    width: 8px;
+    height: 8px;
+    background: rgb(0, 155, 0);
+    position: absolute;
+    left: -13px;
+    top: 7px;
+    border-radius: 50%;
+}
+
+.not-active {
+    background: rgb(255, 239, 58);
+}
+
+.arrow-right {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid rgb(128, 67, 0);
+    right: 0;
+}
+
+
+
+
+
+
 

@@ -29,28 +29,36 @@
 
         <div class="wrapper">  
             <div id="menu">  
-                <p class="welcome">Logged in as <span class="current-user"><strong></strong></span></p>  
+                <p class="welcome">Logged in as 
+                    <span class="current-user"><strong></strong></span>
+                </p>  
+                <input class="change-alias" placeholder="change alias">
                 
-                <p class="logout"><a id="exit" href="#"  onclick='clickLogOut();overlay()'>Log-Out</a></p>  
+
+                <p class="logout"><a id="exit" href="#">Log-Out</a></p>  
+
                 <div style="clear:both"></div>  
             </div>  
       
             <div class="chatbox-enclosure">
                 <div id="chatbox"></div>  
             </div>
+
+            <div class="active-users-header">Users</div>
+            <div class="active-users"><ul></ul></div>
       
             <form name="message" action="">  
                 
                 <input name="usermsg" type="text" id="usermsg" size="63" placeholder="buzzTHIS!">  
                 
-                <input name="submitmsg" type="submit"  id="submitmsg" value="Send">  
+                <a href="#"id="submitmsg">Send</a> 
             </form>  
 
 
             <div class="pop-up">
-                <span class="pop-up-name">Joe</span>
+                <span class="pop-up-name"></span>
                 <hr>
-                <span class="pop-up-message truncate">Hey, wanted to see how things were going.</span>
+                <span class="pop-up-message truncate"></span>
             </div>
 
         </div> <!-- close Wrapper -->
@@ -60,19 +68,25 @@
         </div>
 
         <div id="modal">
+            <div class="buzz-me-title">buzzME</div>
             <div class="modal-box">
                 <div class="parse-user">
+
                     <input class='sign-up-alias' placeholder='alias'>
                     <input class='sign-up-name' placeholder='username'>
                     <input class='sign-up-email' placeholder='email'>
                     <input class='sign-up-password' placeholder='password' type='password'>
-                    <input name="sign-up" onclick='overlay()' type="submit"  class="sign-up temp-btn" value="Sign Up">
+                   <!--  <input name="sign-up" onclick='overlay()' type="submit"  class="sign-up temp-btn" value="Sign Up"> -->
+                  <!--  <a href="#" onclick='overlay()'  class="sign-up temp-btn">Sign Up</a> -->
+                  <a href="#" class="sign-up temp-btn">Sign Up</a>
                 </div>
 
                 <div class="parse-user">
                     <input class='log-in-name' placeholder='username'>
                     <input class='log-in-password' placeholder='password' type='password'>
-                    <input name="log-in" onclick='overlay()' type="submit"  class="log-in temp-btn" value="Log In">
+                    <!-- <input name="log-in" onclick='overlay()' type="submit"  class="log-in temp-btn" value="Log In"> -->
+                    <!-- <a href="#" onclick='overlay()' class="log-in temp-btn">Log In</a> -->
+                    <a href="#" class="log-in temp-btn">Log In</a>
                 </div>
             </div>
          </div>
