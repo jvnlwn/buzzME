@@ -15,8 +15,7 @@
 		it('should save a message to Parse', function(done) {
 			var result;
 
-			var message = new MessageClass();
-			var messageContent = 'My message number ' + Math.floor(Math.random()*100000);
+			var messageContent = 'My message number ' + Math.floor(Math.random()*100000);		
 
 			$('#usermsg').val(messageContent);
 
@@ -27,7 +26,6 @@
 					query.equalTo('message', messageContent);
 					query.find({
 						success: function(results) {
-							console.log(results)
 							result = results[0];
 							setTimeout(function() {
 								expect(result.get('message')).to.equal(messageContent);
@@ -40,7 +38,6 @@
 		});
 
 		it('should fetch new data every three seconds', function(done) {
-			var message = new MessageClass();
 			var messageContent = 'Greatest message ever # ' + Math.floor(Math.random()*100000);
 			var messageExists = false
 	
@@ -64,7 +61,6 @@
 		})
 
 		it('should display the fetched data in the last div of the chatbox', function(done) {
-			var message = new MessageClass();
 			var messageContent = 'Greatest message ever # ' + Math.floor(Math.random()*100000);
 	
 			$('#usermsg').val(messageContent)

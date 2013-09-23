@@ -6,11 +6,10 @@ function saveMessage() {
 	var time =  moment().format();
 	message.set('time', time);
 
-
 	// call display function here, or simply append li/span
 	var klass = 'users-message';
 	template(message, klass)
-	scrollToBottom();
+	scrollToBottom();	
 
 	message.save(null, {
 		success: function(message) {

@@ -65,6 +65,7 @@ function clickLogIn() {
 function clickLogOut() {
 	$('.logout').click(function() {
 		currentUser.set("loggedIn", false);
+		currentUser.set("active", false);
 		currentUser.save(null, {
 			success: function() {
 				logOut();
@@ -95,7 +96,7 @@ function modalOffExample() {
 }
 
 function clearInputs() {
-	$('input').each(function(arg) {
+	$('#modal input').each(function(arg) {
 		$(this).val('');
 	})
 }

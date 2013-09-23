@@ -16,7 +16,7 @@ var allMessages = new MessageCollectionClass();
 var currentLoggedInUsers = new CurrentUserCollectionClass();
 
 // this is the variable Parse uses when specifying the current user.
-var currentUser;
+var currentUser = null;
 
 // when logged out, fetching will stop using clearInterval(handle)
 var handle;
@@ -59,6 +59,7 @@ $('document').ready(function() {
 	});
 
 	$('.chatbox-enclosure').scroll(function() {
+		userActive = moment();
 		if ($('.chatbox-enclosure').scrollTop() < 2) {
 			pagination(25);
 		};
@@ -79,7 +80,7 @@ function signJoeIn() {
 }
 
 function overlay() {
-	el = document.getElementById("modal");
+	var el = document.getElementById("modal");
 	el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
 }
 
