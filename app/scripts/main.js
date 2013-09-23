@@ -50,8 +50,8 @@ $('document').ready(function() {
 	$('.change-alias').keydown(function(event) {
 		if(event.which === 13) {
 			event.preventDefault();
-			currentUser.set('alias', $(this).val())
-			showAlias()
+			currentUser.set('alias', $(this).val());
+			showAlias();
 			currentUser.save();
 			$(this).val('');
 			userActive = moment();
@@ -62,25 +62,19 @@ $('document').ready(function() {
 		userActive = moment();
 		if ($('.chatbox-enclosure').scrollTop() < 2) {
 			pagination(25);
-		};
+		}
 	});
 
 	$('html').click(function() {
 		userActive = moment();
-	})
+	});
 
-	overlay()
+	overlay();
 
 });
 
-function signJoeIn() {
-	$('.log-in-name').val('Joe VanLeeuwen');
-	$('.log-in-password').val('buzzME');
-	$('.log-in').click();
-}
-
 function overlay() {
-	var el = document.getElementById("modal");
-	el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+	var el = document.getElementById('modal');
+	el.style.visibility = (el.style.visibility == 'visible') ? 'hidden' : 'visible';
 }
 

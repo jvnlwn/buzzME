@@ -8,8 +8,8 @@ function saveMessage() {
 
 	// call display function here, or simply append li/span
 	var klass = 'users-message';
-	template(message, klass)
-	scrollToBottom();	
+	template(message, klass);
+	scrollToBottom();
 
 	message.save(null, {
 		success: function(message) {
@@ -18,8 +18,4 @@ function saveMessage() {
 			console.log(error.description);
 		}
 	});
-};
-
-function clearInput(input) {
-	input.val('');
 }

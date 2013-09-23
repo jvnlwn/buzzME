@@ -1,22 +1,22 @@
 function continuousFetch() {
 	handle = setInterval(function()  {
 		var query = new Parse.Query(MessageClass);
-		query.greaterThan('createdAt', allMessages.at(allMessages.length - 1).createdAt)
+		query.greaterThan('createdAt', allMessages.at(allMessages.length - 1).createdAt);
 		query.find({
-	 		success: function(messages) {
-	 			allMessages.add(messages);
-	    		display(allMessages);
+			success: function(messages) {
+				allMessages.add(messages);
+				display(allMessages);
 				changeTitleNum( newMessageSound( messages, scrolltoBottomIf() ) );
-	  		},
-	  		error: function(allMessages, error) {
-	    		console.log('you blew it')
-	  		}
-		})
-		getTimeDiff();			
+			},
+			error: function(allMessages, error) {
+				console.log('you blew it')
+			}
+		});
+		getTimeDiff();
 		userIsLoggedIn();
 	},
 	3000);
-};
+}
 
 function userIsLoggedIn() {
 	currentLoggedInUsers.fetch({
@@ -26,13 +26,12 @@ function userIsLoggedIn() {
 			collection.each(function(user) {
 				if (user.get('active')) {
 					klass = 'user-is-active';
-				} else { klass = 'user-is-active not-active' };
-					showActiveUsers(user, klass);
+				} else { klass = 'user-is-active not-active' }
+				showActiveUsers(user, klass);
 			});
 		}
 	});
-
-};
+}
 
 function getTimeDiff() {
 	if (Math.abs(userActive.diff()) > 120000 && currentUser.get('active')) {
@@ -49,25 +48,26 @@ function showActiveUsers(user, klass) {
 }
 
 function scrolltoBottomIf() {
-	var diff = getDiff()
+	var diff = getDiff();
 
 	if ( diff - ($('.chatbox-enclosure').scrollTop()) <= 50 ) {
 		scrollToBottom();
 		return false;
-	} else { 
-		return true};
-};
+	} else {
+		return true
+	};
+}
 
 function scrollToBottom() {
-	$(".chatbox-enclosure").scrollTop($(".chatbox-enclosure")[0].scrollHeight);
-};
+	$('.chatbox-enclosure').scrollTop($('.chatbox-enclosure')[0].scrollHeight);
+}
 
 function scrollToPosition(height) {
-	$(".chatbox-enclosure").scrollTop(height);
-};
+	$('.chatbox-enclosure').scrollTop(height);
+}
 
 function getDiff() {
-	return $('#chatbox').outerHeight(true) - $('.chatbox-enclosure').height()
+	return $('#chatbox').outerHeight(true) - $('.chatbox-enclosure').height();
 }
 
 // sound effect for when user does not see the messages from other users
