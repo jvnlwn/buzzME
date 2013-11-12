@@ -1,5 +1,5 @@
 #buzzME
-http://joe-vanleeuwen.github.io/buzzME
+Check it out: http://joe-vanleeuwen.github.io/buzzME
 
 buzzMe was a group project involving [joe-vanleeuwen](https://github.com/joe-vanleeuwen), [calebbradley](https://github.com/calebbradley), and [FlackAp](https://github.com/FlackAp). During our time at [The Iron Yard](http://theironyard.com/), the three of us completed this project for an assignment.
 
